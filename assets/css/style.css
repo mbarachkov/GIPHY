@@ -1,0 +1,10 @@
+.input-group-prepend {
+    float: right
+}
+.buttons {
+    margin: 10px;
+}
+.container {
+    margin: 10px;
+    width: 100%;
+}

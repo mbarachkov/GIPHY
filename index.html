@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,8 +13,14 @@
 </head>
 
 <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <div class="container">
-        <div class="buttons"></div>
+        <div class="row">
+            <div class="col-md-12" id="buttons">
+
+            </div>
+        </div>
+        
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <button class="btn btn-outline-secondary" type="button" id="button-addon1">Submit</button>
@@ -22,8 +28,12 @@
             <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon"
                 aria-describedby="button-addon1">
         </div>
-
+        <div id="gif-responses"></div>
     </div>
+    <!-- <div class="container">
+        <div id="gif-responses"></div>
+    </div> -->
+
     <script src="assets/javascript/app.js"></script>
 </body>
 
