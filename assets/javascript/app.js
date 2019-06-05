@@ -1,35 +1,65 @@
 var topics = ["Kevin Hart", "Chris Rock", "Jerry Seinfeld", "Dave Chappelle", "jim carry"];
 
-for (var i = 0; i < topics.length; i++){
-    console.log(topics[i]);
-}
+$(document).ready(function () {
+    $("button").click(function () {
+        $("input:text").val();
+        console.log($("input:text").val());
+        topics.push($("input:text").val());
+
+    });
+
+    for (var i = 0; i < topics.length; i++) {
+        console.log(topics[i]);
+        var btn = $("<button>");
+        btn.addClass("btn btn-success");
+        btn.attr("data-topic", topics[i]);
+        btn.text(topics[i]);
+        $(".buttons").append(btn);
+    }
+
+});
 
 
-$("button").on("click", function () {
 
-    var gifInfo = $(this).attr("data-gifInfo");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + gifInfo + "&api_key=Ryiilh7baQ2Gu06AFkJn7lBs6gexkzpS&limit=10";
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
-        .then(function (response) {
-            console.log(queryURL);
-            console.log(response);
 
-            var results = response.data;
-            for (var i = 0; i < results.length; i++) {
-                var gifDiv = $("<div>");
-                var p = $("<p>").text("Rating " + results[i].rating);
 
-                var newGif = $("<img>");
-                newGif.attr("src", results[i].images.fixed_height.url);
+// $("#button-addon1").on("click", function() {
+//     var inputText = document.getElementById("inputText").nodeValue;
+//     topics.push(inputText);
+//     $("#buttons").append(inputText);
+// })
 
-                gifDiv.html(p);
-                gifDiv.html(newGif)
-                $("#gif-responses").prepend(gifDiv);
-            }
-        })
+// $("#press-btn").on("click", function () {
 
-})
+//     console.log(topics[i]);
+//     var btn = $("<button>");
+//     btn.addClass("btn btn-success press-btn");
+//     btn.attr("data-topic", topics[i]);
+//     btn.text(topics[i]);
+//     $(".buttons").append(btn)
+
+
+//     var gifInfo = this.innerText;
+//     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + window.encodeURI(gifInfo) + "&limit=10&api_key=Ryiilh7baQ2Gu06AFkJn7lBs6gexkzpS";
+
+//     $.ajax({
+//         url: queryURL,
+//         method: "GET"
+//     })
+//         .then(function (response) {
+//             console.log(queryURL);
+//             console.log(response);
+
+//             var results = response.data;
+//             for (var i = 0; i < topics.length; i++) {
+//                 var gifDiv = $("<div>");
+//                 var newGif = $("<img>");
+
+//                 newGif.attr("src", results[i].images.original.url);
+//                 gifDiv.html(newGif)
+//                 $(".buttons").append(btn);
+//             }
+//         })
+//     arrPush();
+// })
