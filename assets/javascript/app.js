@@ -1,21 +1,35 @@
-var topics = ["Kevin Hart", "Chris Rock", "Jerry Seinfeld", "Dave Chappelle", "jim carry"];
+var topics = ["Kevin Hart", "Chris Rock", "Mitch Hedberg", "Dave Chappelle", "jim carry", "Will Ferrell", "Dane Cook", "Andy Milonakis", "Ryan Reynolds"];
+
 
 $(document).ready(function () {
+    makeButtons();
+
+    function makeButtons() {
+
+        $(".buttons").empty();
+
+
+        for (var i = 0; i < topics.length; i++) {
+            console.log(topics[i]);
+            var btn = $("<button>");
+            btn.addClass("btn");
+            btn.attr("data-topic", topics[i]);
+            btn.text(topics[i]);
+            $(".buttons").append(btn);
+        }
+    }
+
     $("button").click(function () {
-        $("input:text").val();
-        console.log($("input:text").val());
-        topics.push($("input:text").val());
+        event.preventDefault();
+        var topic = $("#inputText").val().trim();
+        topics.push(topic);
+        makeButtons();
 
     });
 
-    for (var i = 0; i < topics.length; i++) {
-        console.log(topics[i]);
-        var btn = $("<button>");
-        btn.addClass("btn btn-success");
-        btn.attr("data-topic", topics[i]);
-        btn.text(topics[i]);
-        $(".buttons").append(btn);
-    }
+
+
+
 
 });
 
@@ -30,7 +44,7 @@ $(document).ready(function () {
 //     $("#buttons").append(inputText);
 // })
 
-// $("#press-btn").on("click", function () {
+// $("button").on("click", function () {
 
 //     console.log(topics[i]);
 //     var btn = $("<button>");
