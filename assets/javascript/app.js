@@ -34,10 +34,10 @@ $(document).ready(function () {
                 var topics = response.data
                 $("#gif-responses").empty();
                 for (var i = 0; i < topics.length; i++) {
-                    var img = $("<img>")
+                    var img = $("<img>");
                     img.addClass("giphy-image");
                     img.attr("src", topics[i].images.original.url);
-                    img.attr("alt", name);
+                    img.attr("alt", img);
 
                     $("#gif-responses").append(img);
                 }
