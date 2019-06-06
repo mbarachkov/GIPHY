@@ -15,14 +15,14 @@ $(document).ready(function () {
         }
     }
 
-    $("#press-btn").click(function () {
+    $(".submit").click(function () {
         event.preventDefault();
         var topic = $("#inputText").val().trim();
         topics.push(topic);
         makeButtons();
     });
 
-    $(".btn").on("click", function () {
+    $(document).on("click", ".btn", function () {
         var btn = $(this).attr("data-topic")
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + btn + "&limit=10&api_key=Ryiilh7baQ2Gu06AFkJn7lBs6gexkzpS";
 
@@ -38,23 +38,9 @@ $(document).ready(function () {
                     img.addClass("giphy-image");
                     img.attr("src", topics[i].images.original.url);
                     img.attr("alt", name);
+
                     $("#gif-responses").append(img);
                 }
-
             });
-
     })
 })
-
-
-
-// var gifDiv = $("<div class='gif'>");
-                // var rating = response.data.rating;
-                // console.log(btn);
-
-                // var pOne = $("<p>").text("Rating: " + rating);
-                // gifDiv.html(pOne);
-
-                // var imgURL = response.data.image_original_url;
-                // var image = $("<img>").attr("src", imgURL);
-                // $("#gif-responses").html(image);
